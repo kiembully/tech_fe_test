@@ -19,7 +19,10 @@ export default function Home() {
           maxWidth: '954px',
           padding: '32px 60px',
           borderRadius: '24px',
-          border: '1px solid var(--gray-200, #E5E7EB)'
+          border: '1px solid var(--gray-200, #E5E7EB)',
+          '@media (max-width: 768px)': {
+            padding: '12px 30px',
+          }
         }}
         >
         <Grid item xs={12}>

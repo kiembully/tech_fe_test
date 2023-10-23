@@ -59,16 +59,16 @@ const ListingCardHotels = () => {
       <Grid item xs={12}>
         <span className={styles.horizontal_line}></span>
       </Grid>
-      <Grid item md={5} xs={5} className={styles.grid_display_pic_outer_left}>
+      <Grid item md={5} xs={12} className={styles.grid_display_pic_outer_left}>
         <div className={styles.display_pic_wrapper}>
           <Chip className={styles.display_pic_discount} label="-10% discount" />
-          <Image src='/assets/hotel_dispaly_pic.png' fill alt='hotel display picture' />
+          <Image src='/assets/hotel_dispaly_pic.png' fill priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='hotel display picture' />
           <IconButton aria-label="delete" size="large" className={styles.display_pic_btn}>
             <FavoriteIcon />
           </IconButton>
         </div>
       </Grid>
-      <Grid item md={7} xs={7} className={styles.grid_display_pic_outer_right}>
+      <Grid item md={7} xs={12} className={styles.grid_display_pic_outer_right}>
         <Stack
           direction='column'
           spacing={1}

@@ -1,3 +1,8 @@
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+$breakpoint-min: 0px;
+
 .table_wrap {
   margin-top: 25px;
   overflow: hidden;
@@ -5,6 +10,7 @@
   border: 1px solid var(--gray-200, #E5E7EB);
   background: var(--white, #FFF);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  overflow-x: auto;
   .table_header {
     padding: 12px 24px;
     align-items: center;
@@ -36,6 +42,10 @@
             line-height: 28px; /* 175% */
             text-overflow: ellipsis;
             overflow: hidden;
+
+            @media  (max-width: $breakpoint-tablet) {
+              white-space: normal;
+            }
           }
           span {
             color: var(--gray-500, #6B7280);
@@ -44,6 +54,13 @@
             font-style: normal;
             font-weight: 400;
             line-height: 20px; /* 142.857% */
+          }
+        }
+        .table_details_wrapper_m {
+          display: none !important;
+
+          @media screen and (min-width: $breakpoint-min) {
+            display: flex !important;
           }
         }
       }

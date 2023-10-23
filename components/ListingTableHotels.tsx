@@ -1,8 +1,11 @@
-import { Grid } from '@mui/material';
+"use client"; // This is a client component
+import { useState } from 'react'
+import { Grid, IconButton } from '@mui/material';
 import styles from './tablehotel.module.scss'
 // import TableBody from './TableBody';
 import Image from 'next/image';
-import { Table, TableBody, TableCell, TableHead, TableRow, Typography, Chip, Button } from '@mui/material';
+import { Table, TableBody, TableCell, TableHead, TableRow, Typography, Chip, Button, Collapse } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 const mockListHotel = [
@@ -51,6 +54,11 @@ const mockListHotel = [
 ]
 
 const ListingTableHotels = () => {
+
+  const [isExpanded, setIsExpanded] = useState(false)
+  const handleCollapse = () => {
+    setIsExpanded(!isExpanded)
+  }
   
   return (
     <div className={styles.table_wrap}>
@@ -77,11 +85,19 @@ const ListingTableHotels = () => {
                     <TableCell> 
                       <div>
                         <div className={styles.table_image_wrapper}>
-                          <Image src={item.imgPath} fill alt='' />
+                          <Image src={item.imgPath} fill alt={`hotel thumbnail-${index}`} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                         </div>
                         <div className={styles.table_details_wrapper}>
                           <Typography variant='inherit'>{item.title}</Typography>
                           <Typography variant='caption'>{item.caption}</Typography>
+                        </div>
+                        <div className={styles.table_details_wrapper_m}>
+                          <IconButton>
+                            <KeyboardArrowDownIcon />
+                          </IconButton>
+                          <Collapse in={isExpanded} timeout="auto" unmountOnExit>
+                            <h1>sss</h1>
+                          </Collapse>
                         </div>
                       </div>
                     </TableCell>
