@@ -1,0 +1,86 @@
+.order_header {
+  color: var(--gray-900, #111827);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 100% */
+  margin: 0
+}
+
+.grid_display_pic_outer_left {
+  border-radius: 24px 0 0 24px;
+  border: 1px solid var(--gray-200, #E5E7EB);
+  overflow: hidden;
+  position: relative;
+  .display_pic_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .display_pic_discount {
+      z-index: 1;
+      position: absolute;
+      top: 14px;
+      left: 15px;
+      background-color: #B91C1C;
+
+      color: var(--red-50, #FEF2F2);
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px; /* 133.333% */
+    }
+    .display_pic_btn {
+      z-index: 1;
+      position: absolute;
+      top: 2px;
+      right: 15px;
+      svg {
+        color: white;
+        font-size: 30px
+      }
+    }
+  }
+}
+
+.grid_display_pic_outer_right {
+  border-radius: 0 24px 24px 0;
+  border: 1px solid var(--gray-200, #E5E7EB);
+  overflow: hidden;
+  padding: 20px;
+  .card_rating_caption {
+    display: flex;
+    color: var(--gray-800, #1F2937);
+    /* text-sm/leading-5 (main)/font-medium */
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    img {
+      margin-right: 2px
+    }
+  }
+  .card_pricing {
+    margin: 0;
+    color: var(--Cyan, #04CEDB);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.horizontal_line {
+  display: flex;
+  margin: 32px 0;
+  border-bottom: 1px solid #F3F4F6
+}
+
+.horizontal_line_2 {
+  display: flex;
+  margin: 16px 0 !important;
+  max-width: 56px;
+  border-bottom: 1px solid #F3F4F6
+}
